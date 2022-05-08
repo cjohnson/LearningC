@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main()
+int main()
 {
     int celsius;
     for(int fahr = 0; fahr <= 300; fahr += 20)

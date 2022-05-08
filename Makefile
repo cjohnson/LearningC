@@ -24,7 +24,7 @@ clean:
 	rm -r $(BUILD_DIR)
 
 .PHONY: exec
-exec:
+exec: $(BUILD_DIR)/$(TARGET_EXEC) 
 	$(BUILD_DIR)/$(TARGET_EXEC)
 
 -include $(DEPS)
