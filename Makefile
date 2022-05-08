@@ -23,4 +23,8 @@ $(BUILD_DIR)/%.c.o: %.c
 clean:
 	rm -r $(BUILD_DIR)
 
+.PHONY: exec
+exec:
+	$(BUILD_DIR)/$(TARGET_EXEC)
+
 -include $(DEPS)
