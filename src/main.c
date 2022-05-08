@@ -2,10 +2,10 @@
 
 int main()
 {
-    int celsius;
-    for(int fahr = 0; fahr <= 300; fahr += 20)
+    float celsius;
+    for(float fahr = 0.0; fahr <= 300.0; fahr += 20.0)
     {
-        celsius = 5 * (fahr - 32) / 9;
-        printf("%d\t%d\n", fahr, celsius);
+        celsius = (5.0/9.0) * (fahr - 32.0);
+        printf("%3.0f %6.1f\n", fahr, celsius);
     }
 }
