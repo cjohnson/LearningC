@@ -13,7 +13,7 @@ INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 CPPFLAGS := $(INC_FLAGS) -MMD -MP
 
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
-	$(CC) $(OBJS) -o $@ $(LDFLAGS)
+	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lm
 
 $(BUILD_DIR)/%.c.o: %.c
 	mkdir -p $(dir $@)

@@ -10,6 +10,21 @@ struct Vector3i
 }; typedef struct Vector3i Vector3i;
 
 /**
+ * @brief           Creates a 3-dimensional vector at the origin.
+ * 
+ * @return Vector3i The resulting vector.
+ */
+Vector3i Vector3i__create_empty()
+{
+    Vector3i vector;
+    vector.x = 0;
+    vector.y = 0;
+    vector.z = 0;
+
+    return vector;
+}
+
+/**
  * @brief           Creates a new 3-dimensional vector.
  * 
  * @param x         X value of the vector.
@@ -74,7 +89,7 @@ double Vector3i__norm(Vector3i* vector)
 int Vector3i__to_string(char* serialize, Vector3i* vector)
 {
     if(serialize == NULL) return 1;
-    if(vector == NULL)      return 1;
+    if(vector == NULL)    return 1;
     
     sprintf(serialize, VECTOR3I__TO_STRING_FORMAT,
         vector->x, vector->y, vector->z
@@ -85,7 +100,7 @@ int Vector3i__to_string(char* serialize, Vector3i* vector)
 
 int main()
 {
-    Vector3i vector = Vector3i__create(0, 0, 0);
+    Vector3i vector = Vector3i__create_empty();
 
     char serialize[50];
     if(Vector3i__to_string(serialize, &vector))

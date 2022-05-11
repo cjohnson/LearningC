@@ -1,0 +1,333 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed May 11 19:16:24 2022
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-415d1535-5496-417e-9391-79ffb681b8d2.sock
+# environment
+LC_NAME = en_US.UTF-8
+# environment
+LC_NUMERIC = en_US.UTF-8
+# environment
+VSCODE_CWD = /home/cj
+# environment
+LC_ADDRESS = en_US.UTF-8
+# default
+MAKE_COMMAND := make
+# environment
+GTK3_MODULES = xapp-gtk3-module
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# makefile (from 'Makefile', line 11)
+INC_FLAGS := -I./src
+# default
+.VARIABLES := 
+# environment
+PWD = /home/cj/Workspace/LearningC
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+MAIL = /var/spool/mail/cj
+# environment
+OLDPWD = /home/cj
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/cj/.config/Code/CachedData/57fd6d0195bb9b9d1b49f6da5db789060795de47
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+# environment
+LANG = C
+# environment
+XAUTHORITY = /home/cj/.Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/cj/Workspace/LearningC
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# makefile (from 'Makefile', line 6)
+SRCS := ./src/main.c
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = 
+# makefile (from 'build/./src/main.c.d', line 1)
+MAKEFILE_LIST := Makefile build/./src/main.c.d
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 193780
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+*F = $(notdir $*)
+# environment
+QT_QPA_PLATFORMTHEME = qt5ct
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'Makefile', line 7)
+OBJS := ./build/./src/main.c.o
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+DOTNET_BUNDLE_EXTRACT_BASE_DIR = /home/cj/.cache/dotnet_bundle_extract
+# environment
+SHLVL = 1
+# makefile (from 'Makefile', line 4)
+SRC_DIRS := ./src
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/bin:/home/cj/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+# default
+MAKEFILES := 
+# environment
+LC_MONETARY = en_US.UTF-8
+# environment
+MOTD_SHOWN = pam
+# automatic
+^F = $(notdir $^)
+# environment
+LC_TIME = en_US.UTF-8
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+LC_TELEPHONE = en_US.UTF-8
+# automatic
+?F = $(notdir $?)
+# environment
+XDG_SEAT = seat0
+# environment
+XDG_CURRENT_DESKTOP = 
+# automatic
++F = $(notdir $+)
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+DESKTOP_SESSION = awesome
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = 
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = cj
+# makefile (from 'Makefile', line 13)
+CPPFLAGS := -I./src -MMD -MP
+# environment
+XDG_VTNR = 1
+# makefile
+.DEFAULT_GOAL := build/learningc
+# environment
+EDITOR = nano
+# environment
+DISPLAY = :0
+# environment
+GTK_MODULES = canberra-gtk-module
+# environment
+USER = cj
+# default
+MAKE_VERSION := 4.3
+# 'override' directive
+.SHELLSTATUS := 0
+# environment
+LC_MEASUREMENT = en_US.UTF-8
+# environment
+_ = /usr/bin/make
+# environment
+LC_PAPER = en_US.UTF-8
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# makefile (from 'Makefile', line 1)
+TARGET_EXEC := learningc
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# makefile (from 'Makefile', line 3)
+BUILD_DIR := ./build
+# environment
+HOME = /home/cj
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-557b91e4-1.67.0-main.sock
+# environment
+XDG_SESSION_ID = 2
+# makefile (from 'Makefile', line 10)
+INC_DIRS := ./src
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 8)
+DEPS := ./build/./src/main.c.d
+# default
+SUFFIXES := 
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# environment
+DOTNET_ROOT = /usr/share/dotnet
+# environment
+LC_IDENTIFICATION = en_US.UTF-8
+# variable set hash-table stats:
+# Load=106/1024=10%, Rehash=0, Collisions=9/159=6%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2066, inode 12847442): 8 files, no impossibilities.
+
+# 8 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+build/%.c.o: %.c
+#  recipe to execute (from 'Makefile', line 19):
+	mkdir -p $(dir $@)
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+# 1 implicit rules, 0 (0.0%) terminal.
+# Files
+
+exec: build/learningc
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 28):
+	$(BUILD_DIR)/$(TARGET_EXEC)
+
+# Not a target:
+build/./src/main.c.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-11 19:14:34.742806451
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-11 19:15:09.483088674
+#  File has been updated.
+#  Successfully updated.
+
+build/learningc: build/./src/main.c.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 16):
+	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lm
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+ 
+#  recipe to execute (from 'Makefile', line 24):
+	rm -r $(BUILD_DIR)
+
+build/./src/main.c.o: src/main.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/main.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PHONY: clean exec
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=11/1024=1%, Rehash=0, Collisions=0/31=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 22 / storage = 206 B / avg = 9 B
+# current buf: size = 8162 B / used = 206 B / count = 22 / avg = 9 B
+
+# strcache performance: lookups = 38 / hit rate = 42%
+# hash-table stats:
+# Load=22/8192=0%, Rehash=0, Collisions=0/38=0%
+# Finished Make data base on Wed May 11 19:16:24 2022
+
+ 
