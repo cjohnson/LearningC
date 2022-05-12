@@ -2,25 +2,29 @@
 
 int main()
 {
-    Vector3d vector3d = Vector3d__create(2, 1, 3);
-    Vector3d vector3d_empty = Vector3d__create_empty();
-    Vector3d copy_of_vector3d = Vector3d__copy(&vector3d);
+    // printf("1");
+    Vector3d vector_one = Vector3d__create(1, 2, 3);
+    Vector3d vector_two = Vector3d__create(1, -2, -6);
+    Vector3d vector_three = Vector3d__create(-2, 3, 5);
+    
+    // printf("1");
+    Vector3d vectors[] = {vector_one, vector_two, vector_three};
 
-    Vector3d__print(&vector3d);
-    Vector3d__print(&vector3d_empty);
-    Vector3d__print(&copy_of_vector3d);
+    // printf("1");
+    Vector3d** ortho_vectors = malloc(sizeof(vector_one) * 3);
+    Vector3d** input_vectors = malloc(sizeof(vector_one) * 3);
 
-    printf("Norm of vector3d = %.3f\n", Vector3d__norm(&vector3d));
+    // printf("1");
+    for(int i = 0; i < 3; ++i)
+    {
+        input_vectors[i] = &vectors[i];
+        ortho_vectors[i] = &vectors[i];
+    }
 
-    Vector3d__scale(&copy_of_vector3d, 3);
-    Vector3d__print(&copy_of_vector3d);
+    // printf("1");
+    Vector3d__orthogonalize(ortho_vectors, input_vectors, 3);
 
-    Vector3d vec = Vector3d__add_from(&vector3d, &copy_of_vector3d);
-    Vector3d__print(&vec);
-
-    Vector3d toAdd = Vector3d__create(2, 3, 2);
-    Vector3d__add(&vec, &toAdd);
-    Vector3d__print(&vec);
-
-    printf("Dot of vec and toAdd = %.3f\n", Vector3d__dot(&vec, &toAdd));
+    // Vector3d__print(ortho_vectors[0]);
+    // Vector3d__print(ortho_vectors[1]);
+    // Vector3d__print(ortho_vectors[2]);
 }

@@ -78,6 +78,16 @@ Vector3d Vector3d__add_from(Vector3d* first_addend, Vector3d* second_addend)
                             first_addend->x_3 + second_addend->x_3);
 }
 
+Vector3d Vector3d__subtract(Vector3d* minuend, Vector3d* subtrahend)
+{
+    if(minuend    == NULL) return Vector3d__create_empty();
+    if(subtrahend == NULL) return Vector3d__create_empty();
+
+    return Vector3d__create(minuend->x_1 - subtrahend->x_1,
+                            minuend->x_2 - subtrahend->x_2,
+                            minuend->x_3 - subtrahend->x_3);
+}
+
 double Vector3d__dot(Vector3d* first_vector, Vector3d* second_vector)
 {
     int result = 0.0d;
@@ -86,6 +96,56 @@ double Vector3d__dot(Vector3d* first_vector, Vector3d* second_vector)
     result += first_vector->x_3 * second_vector->x_3;
 
     return result;
+}
+
+void Vector3d__orthogonalize(Vector3d* ortho_vector_set[], Vector3d* input_vector_set[], int set_size)
+{
+    // Checks if the set is already orthogonalized.
+    bool orthogonalized = true;
+    for(int i = 1; i < set_size; ++i)
+    {
+        if(Vector3d__dot(input_vector_set[i], input_vector_set[i-1]) != 0)
+            orthogonalized = false;
+    }
+
+    // Return the same set if the vectors are orthogonal
+    if(orthogonalized)
+    {
+        printf("Already orthogonalized!\n");
+        for(int i = 0; i < set_size; ++i)
+            ortho_vector_set[i] = input_vector_set[i];
+        return;
+    }
+
+    printf("Not orthogonalized!\n");
+
+    // Perform the Gram-Schmidt procedure
+    ortho_vector_set[0] = input_vector_set[0];
+    for(int i = 1; i < set_size; ++i)
+    {
+        for(int i = 0; i < 3; ++i)
+            Vector3d__print(ortho_vector_set[i]);
+        printf("\n");
+
+        ortho_vector_set[i] = input_vector_set[i];
+        for(int j = 0; j < i; ++j)
+        {
+            // Calculate the vector projections
+            double numerator_dot_product = Vector3d__dot(ortho_vector_set[j], input_vector_set[i]);
+            double denominator_dot_product = Vector3d__dot(ortho_vector_set[j], ortho_vector_set[j]);
+
+            double quotient = numerator_dot_product / denominator_dot_product;
+            printf("%f / %f = %f\n", numerator_dot_product, denominator_dot_product, quotient);
+            if(quotient == 0.0d) continue;
+
+            // Remove the projections
+            Vector3d temp = Vector3d__copy(ortho_vector_set[j]);
+            Vector3d__scale(&temp, quotient);
+            
+            temp = Vector3d__subtract(ortho_vector_set[i], &temp);
+            ortho_vector_set[i] = &temp;
+        }
+    }
 }
 
 double Vector3d__norm(Vector3d* vector)

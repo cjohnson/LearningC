@@ -74,6 +74,15 @@ int Vector3d__add(Vector3d* addend, Vector3d* additive);
 Vector3d Vector3d__add_from(Vector3d* first_addend, Vector3d* second_addend);
 
 /**
+ * @brief               Subtracts the first vector (the minuend) from the second (the subtrahend).
+ * 
+ * @param first_addend  The minuend of the operation
+ * @param second_addend The subtrahend of the operation
+ * @return Vector3d     The difference vector
+ */
+Vector3d Vector3i__subtract(Vector3d* minuend, Vector3d* subtrahend);
+
+/**
  * @brief               Finds the dot product of the two given vectors.
  * 
  * @param first_vector  The first vector in the operation
@@ -81,6 +90,15 @@ Vector3d Vector3d__add_from(Vector3d* first_addend, Vector3d* second_addend);
  * @return Vector3d     The calculated dot product of the first and second vectors
  */
 double Vector3d__dot(Vector3d* first_vector, Vector3d* second_vector);
+
+/**
+ * @brief                  Finds an orthogonal set of Vector3d using the Gram-Schmidt Orthogonalization procedure
+ * 
+ * @param ortho_vector_set The resulting set of orthogonal vectors
+ * @param input_vector_set The original set of vectors
+ * @param set_size         The size of the sets
+ */
+void Vector3d__orthogonalize(Vector3d* ortho_vector_set[], Vector3d* input_vector_set[], int set_size);
 
 /**
  * @brief         Calculate the norm of the vector (double)
