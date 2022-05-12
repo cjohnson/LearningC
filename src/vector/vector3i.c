@@ -43,6 +43,19 @@ int Vector3i__scale(Vector3i* vector, int scalar)
     return EXIT_SUCCESS;
 }
 
+Vector3i Vector3i__add(Vector3i* first_addend, Vector3i* second_addend)
+{
+    if(first_addend  == NULL) return Vector3i__create_empty();
+    if(second_addend == NULL) return Vector3i__create_empty();
+
+    Vector3i sum = Vector3i__copy(first_addend);
+    sum.x += second_addend->x;
+    sum.y += second_addend->y;
+    sum.z += second_addend->z;
+
+    return sum;
+}
+
 double Vector3i__norm(Vector3i* vector)
 {
     if(vector == NULL) return 0.0f;

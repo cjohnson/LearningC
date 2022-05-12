@@ -46,6 +46,15 @@ Vector3i Vector3i__copy(Vector3i* vector_original);
 int Vector3i__scale(Vector3i* vector, int scalar);
 
 /**
+ * @brief               Adds two vectors together, and returns the result.
+ * 
+ * @param first_addend  The first vector in the set of the addition operation
+ * @param second_addend The second vector in the set of the addition operation
+ * @return Vector3i     The sum vector
+ */
+Vector3i Vector3i__add(Vector3i* first_addend, Vector3i* second_addend);
+
+/**
  * @brief        Calculate the norm of the vector (double)
  * 
  * @param vector The vector reference

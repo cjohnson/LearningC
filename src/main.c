@@ -18,11 +18,20 @@ int main()
     Vector3i__print(&copiedVector);
 
     // Scale testing
-    Vector3i__scale(&copiedVector, 245);
+    Vector3i__scale(&copiedVector, 2);
     printf("Scaling copied vector. Original Vector:\n");
     Vector3i__print(&vector);
     printf("Copied vector:\n");
     Vector3i__print(&copiedVector);
+
+    // Addition testing
+    Vector3i sum = Vector3i__add(&vector, &copiedVector);
+    printf("First Vector:  ");
+    Vector3i__print(&vector);
+    printf("Second Vector: ");
+    Vector3i__print(&copiedVector);
+    printf("Sum = ");
+    Vector3i__print(&sum);
 
     // Norm calculations
     printf("\nCalculating float norm...\n");
