@@ -1,22 +1,8 @@
-#include "vector/vector3i.h"
+#include "vector/vector3d.h"
 
 int main()
 {
-    Vector3i first_vector =  Vector3i__create(1, 0, 0);
-    Vector3i second_vector = Vector3i__create(3, 2, 5);
-    Vector3i third_vector =  Vector3i__create(0, 2, 4);
-    Vector3i vectors[] = {first_vector, second_vector, third_vector};
-
-    Vector3i** input_vectors = malloc(sizeof(first_vector) * 3);
-    Vector3i** ortho_vectors = malloc(sizeof(first_vector) * 3);
-    input_vectors[0] = &vectors[0];
-    input_vectors[1] = &vectors[1];
-    input_vectors[2] = &vectors[2];
-    
-    Vector3i__orthogonalize(ortho_vectors, input_vectors, 3);
-    for(int i = 0; i < 3; i++)
-        Vector3i__print(ortho_vectors[i]);
-
-    free(input_vectors);
-    free(ortho_vectors);
+    Vector3d vector3d = Vector3d__create(2, 1, 3);
+    Vector3d vector3d_empty = Vector3d__create_empty();
+    Vector3d copy_of_vector3d = Vector3d__copy(&vector3d);
 }
