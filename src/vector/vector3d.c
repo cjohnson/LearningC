@@ -43,6 +43,19 @@ int Vector3d__scale(Vector3d* vector, int scalar)
     return EXIT_SUCCESS;
 }
 
+Vector3d Vector3d__scale_from(Vector3d* input_vector, int scalar)
+{
+    Vector3d vector = Vector3d__create_empty();
+    if(input_vector == NULL)
+        return vector;
+    
+    vector->x_1 = scalar * input_vector->x_1;
+    vector->x_2 = scalar * input_vector->x_2;
+    vector->x_3 = scalar * input_vector->x_3;
+
+    return vector;
+}
+
 double Vector3d__norm(Vector3d* vector)
 {
     if(vector == NULL) return 0.0f;

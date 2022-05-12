@@ -47,6 +47,15 @@ Vector3d Vector3d__copy(Vector3d* vector_original);
 int Vector3d__scale(Vector3d* vector, int scalar);
 
 /**
+ * @brief                 Scales all the elements of a vector by a given scalar, then returns a new vector
+ * 
+ * @param input_vector    The vector reference
+ * @param scalar          The scalar
+ * @return Vector3d       The scaled vector
+ */
+Vector3d Vector3d__scale_from(Vector3d* input_vector, int scalar);
+
+/**
  * @brief         Calculate the norm of the vector (double)
  * 
  * @param vector  The vector reference
