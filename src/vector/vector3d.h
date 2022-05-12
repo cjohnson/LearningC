@@ -42,9 +42,9 @@ Vector3d Vector3d__copy(Vector3d* vector_original);
  * 
  * @param vector The vector reference
  * @param scalar The scalar
- * @return int   The exit status of the function
+ * @return int  The exit status of the function
  */
-int Vector3d__scale(Vector3d* vector, int scalar);
+int Vector3d__scale(Vector3d* vector, double scalar);
 
 /**
  * @brief                 Scales all the elements of a vector by a given scalar, then returns the result.

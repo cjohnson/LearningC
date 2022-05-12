@@ -3,7 +3,7 @@
 int main()
 {
     // printf("1");
-    Vector3d vector_one = Vector3d__create(1, 2, 3);
+    Vector3d vector_one = Vector3d__create(300, 2, 3);
     Vector3d vector_two = Vector3d__create(1, -2, -6);
     Vector3d vector_three = Vector3d__create(-2, 3, 5);
     
@@ -24,7 +24,7 @@ int main()
     // printf("1");
     Vector3d__orthogonalize(ortho_vectors, input_vectors, 3);
 
-    // Vector3d__print(ortho_vectors[0]);
-    // Vector3d__print(ortho_vectors[1]);
-    // Vector3d__print(ortho_vectors[2]);
+    Vector3d__print(ortho_vectors[0]);
+    Vector3d__print(ortho_vectors[1]);
+    Vector3d__print(ortho_vectors[2]);
 }

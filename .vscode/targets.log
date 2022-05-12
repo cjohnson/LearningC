@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed May 11 19:16:24 2022
+# Make data base, printed on Thu May 12 16:10:41 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ LC_ALL = C
 # environment
 NO_AT_BRIDGE = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-415d1535-5496-417e-9391-79ffb681b8d2.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-4457ca49-855b-4745-8a54-dd4cc90bc8f0.sock
 # environment
 LC_NAME = en_US.UTF-8
 # environment
@@ -37,7 +37,7 @@ GTK3_MODULES = xapp-gtk3-module
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # makefile (from 'Makefile', line 11)
-INC_FLAGS := -I./src
+INC_FLAGS := -I./src -I./src/vector
 # default
 .VARIABLES := 
 # environment
@@ -73,9 +73,9 @@ CURDIR := /home/cj/Workspace/LearningC
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from 'Makefile', line 6)
-SRCS := ./src/main.c
+SRCS := ./src/vector/vector3d.c ./src/vector/vector3i.c ./src/main.c
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -87,13 +87,13 @@ MFLAGS = -pqrR
 # environment
 XDG_SESSION_DESKTOP = 
 # makefile (from 'build/./src/main.c.d', line 1)
-MAKEFILE_LIST := Makefile build/./src/main.c.d
+MAKEFILE_LIST := Makefile build/./src/vector/vector3d.c.d build/./src/vector/vector3i.c.d build/./src/main.c.d
 # automatic
 @F = $(notdir $@)
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 193780
+VSCODE_PID = 28241
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -113,7 +113,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # makefile (from 'Makefile', line 7)
-OBJS := ./build/./src/main.c.o
+OBJS := ./build/./src/vector/vector3d.c.o ./build/./src/vector/vector3i.c.o ./build/./src/main.c.o
 # makefile
 SHELL = /bin/sh
 # default
@@ -163,7 +163,7 @@ GNUMAKEFLAGS :=
 # environment
 LOGNAME = cj
 # makefile (from 'Makefile', line 13)
-CPPFLAGS := -I./src -MMD -MP
+CPPFLAGS := -I./src -I./src/vector -MMD -MP
 # environment
 XDG_VTNR = 1
 # makefile
@@ -205,13 +205,13 @@ VSCODE_IPC_HOOK = /run/user/1000/vscode-557b91e4-1.67.0-main.sock
 # environment
 XDG_SESSION_ID = 2
 # makefile (from 'Makefile', line 10)
-INC_DIRS := ./src
+INC_DIRS := ./src ./src/vector
 # default
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
 # makefile (from 'Makefile', line 8)
-DEPS := ./build/./src/main.c.d
+DEPS := ./build/./src/vector/vector3d.c.d ./build/./src/vector/vector3i.c.d ./build/./src/main.c.d
 # default
 SUFFIXES := 
 # environment
@@ -225,7 +225,7 @@ DOTNET_ROOT = /usr/share/dotnet
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=106/1024=10%, Rehash=0, Collisions=9/159=6%
+# Load=106/1024=10%, Rehash=0, Collisions=9/163=6%
 
 # Pattern-specific Variable Values
 
@@ -233,9 +233,9 @@ LC_IDENTIFICATION = en_US.UTF-8
 
 # Directories
 
-# . (device 2066, inode 12847442): 8 files, no impossibilities.
+# . (device 2066, inode 12847442): 9 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -258,9 +258,14 @@ exec: build/learningc
 # Not a target:
 build/./src/main.c.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-11 19:14:34.742806451
+#  Last modified 2022-05-12 15:09:08.60287448
 #  File has been updated.
 #  Successfully updated.
+
+src/vector/vector3i.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
@@ -269,29 +274,41 @@ Makefile:
 #  File has been updated.
 #  Successfully updated.
 
-build/learningc: build/./src/main.c.o
+build/learningc: build/./src/vector/vector3d.c.o build/./src/vector/vector3i.c.o build/./src/main.c.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 16):
 	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lm
 
+ 
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 24):
 	rm -r $(BUILD_DIR)
 
-build/./src/main.c.o: src/main.c
+build/./src/main.c.o: src/main.c src/vector/vector3d.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/vector/vector3d.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 src/main.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/vector/vector3i.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -309,25 +326,54 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
+src/vector/vector3d.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/./src/vector/vector3d.c.o: src/vector/vector3d.c src/vector/vector3d.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/./src/vector/vector3d.c.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-12 15:53:25.337746843
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/./src/vector/vector3i.c.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-12 15:03:30.138485631
+#  File has been updated.
+#  Successfully updated.
+
 .PHONY: clean exec
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+build/./src/vector/vector3i.c.o: src/vector/vector3i.c src/vector/vector3i.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=11/1024=1%, Rehash=0, Collisions=0/31=0%
+# Load=19/1024=2%, Rehash=0, Collisions=0/53=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 206 B / avg = 9 B
-# current buf: size = 8162 B / used = 206 B / count = 22 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 31 / storage = 429 B / avg = 13 B
+# current buf: size = 8162 B / used = 429 B / count = 31 / avg = 13 B
 
-# strcache performance: lookups = 38 / hit rate = 42%
+# strcache performance: lookups = 60 / hit rate = 48%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=0/38=0%
-# Finished Make data base on Wed May 11 19:16:24 2022
+# Load=31/8192=0%, Rehash=0, Collisions=0/60=0%
+# Finished Make data base on Thu May 12 16:10:41 2022
 
  
