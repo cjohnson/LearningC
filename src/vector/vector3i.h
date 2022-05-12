@@ -86,7 +86,7 @@ Vector3i Vector3i__lincom_ext(Vector3i* first_vector, int scalar, Vector3i* seco
 int Vector3i__dot(Vector3i* first_vector, Vector3i* second_vector);
 
 /**
- * @brief                  Finds an orthogonal set of Vector3i.
+ * @brief                  Finds an orthogonal set of Vector3i using the Gram-Schmidt Orthogonalization procedure
  * 
  * @param ortho_vector_set The resulting set of orthogonal vectors
  * @param input_vector_set The original set of vectors
