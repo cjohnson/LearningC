@@ -128,24 +128,29 @@ void Vector3d__orthogonalize(Vector3d* ortho_vector_set[], Vector3d* input_vecto
 
     // Perform the Gram-Schmidt procedure
     ortho_vector_set[0] = input_vector_set[0];
+
+    double numerator_dot_product;
+    double denominator_dot_product;
+    double quotient;
+    Vector3d projected_vector;
     for(int i = 1; i < set_size; ++i)
     {
         ortho_vector_set[i] = input_vector_set[i];
         for(int j = 0; j < i; ++j)
         {
             // Calculate the vector projections    
-            double numerator_dot_product = Vector3d__dot(ortho_vector_set[j], input_vector_set[i]);
-            double denominator_dot_product = Vector3d__dot(ortho_vector_set[j], ortho_vector_set[j]);
+            numerator_dot_product = Vector3d__dot(ortho_vector_set[j], input_vector_set[i]);
+            denominator_dot_product = Vector3d__dot(ortho_vector_set[j], ortho_vector_set[j]);
 
-            double quotient = numerator_dot_product / denominator_dot_product; 
+            quotient = numerator_dot_product / denominator_dot_product; 
             if(quotient == 0.0) continue;
 
             // Remove the projections
-            Vector3d temp = Vector3d__copy(ortho_vector_set[j]);
-            Vector3d__scale(&temp, quotient);
+            projected_vector = Vector3d__copy(ortho_vector_set[j]);
+            Vector3d__scale(&projected_vector, quotient);
             
-            temp = Vector3d__subtract(ortho_vector_set[i], &temp);
-            Vector3d__copy_from(ortho_vector_set[i], &temp);
+            projected_vector = Vector3d__subtract(ortho_vector_set[i], &projected_vector);
+            Vector3d__copy_from(ortho_vector_set[i], &projected_vector);
         }
     }
 }
