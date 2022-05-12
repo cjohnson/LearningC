@@ -53,6 +53,21 @@ Vector3i Vector3i__add(Vector3i* first_addend, Vector3i* second_addend)
                             first_addend->x_3 + second_addend->x_3);
 }
 
+Vector3i Vector3i__lincom(int first_scalar, Vector3i* first_vector, int second_scalar, Vector3i* second_vector)
+{
+    if(first_vector  == NULL) return Vector3i__create_empty();
+    if(second_vector == NULL) return Vector3i__create_empty();
+
+    return Vector3i__create(first_vector->x_1 * first_scalar + second_vector->x_1 * second_scalar,
+                            first_vector->x_2 * first_scalar + second_vector->x_2 * second_scalar,
+                            first_vector->x_3 * first_scalar + second_vector->x_3 * second_scalar);
+}
+
+Vector3i Vector3i__lincom_ext(Vector3i* first_vector, int scalar, Vector3i* second_vector)
+{
+    return Vector3i__lincom(1, first_vector, scalar, second_vector);
+}
+
 Vector3i Vector3i__subtract(Vector3i* minuend, Vector3i* subtrahend)
 {
     if(minuend    == NULL) return Vector3i__create_empty();

@@ -33,6 +33,15 @@ int main()
     printf("Sum = ");
     Vector3i__print(&sum);
 
+    // Linear combinations
+    Vector3i lincom = Vector3i__lincom(2, &vector, 3, &copiedVector);
+    printf("First Vector (x2):  ");
+    Vector3i__print(&vector);
+    printf("Second Vector (x3): ");
+    Vector3i__print(&copiedVector);
+    printf("Linear Combination = ");
+    Vector3i__print(&lincom);
+
     // Subtraction testing
     Vector3i difference = Vector3i__subtract(&sum, &vector);
     printf("Minuend:    ");

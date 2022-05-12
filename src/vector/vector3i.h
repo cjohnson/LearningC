@@ -55,6 +55,27 @@ int Vector3i__scale(Vector3i* vector, int scalar);
 Vector3i Vector3i__add(Vector3i* first_addend, Vector3i* second_addend);
 
 /**
+ * @brief               Calculates the result of a linear combination of two vectors.
+ * 
+ * @param first_scalar  The scalar multplied by the first vector
+ * @param first_vector  The first vector in the linear combination
+ * @param second_scalar The scalar multplied by the second vector
+ * @param second_vector The second vector in the linear combination
+ * @return Vector3i     The result of the linear combination
+ */
+Vector3i Vector3i__lincom(int first_scalar, Vector3i* first_vector, int second_scalar, Vector3i* second_vector);
+
+/**
+ * @brief               Calculates the result of a linear combination of two vectors, where the first vector's scalar is 1.
+ * 
+ * @param first_vector  The first vector in the linear combination
+ * @param second_scalar The scalar multplied by the second vector
+ * @param second_vector The second vector in the linear combination
+ * @return Vector3i     The result of the linear combination
+ */
+Vector3i Vector3i__lincom_ext(Vector3i* first_vector, int scalar, Vector3i* second_vector);
+
+/**
  * @brief               Subtracts the first vector (the minuend) from the second (the subtrahend).
  * 
  * @param first_addend  The minuend of the operation
