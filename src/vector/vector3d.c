@@ -78,6 +78,16 @@ Vector3d Vector3d__add_from(Vector3d* first_addend, Vector3d* second_addend)
                             first_addend->x_3 + second_addend->x_3);
 }
 
+double Vector3d__dot(Vector3d* first_vector, Vector3d* second_vector)
+{
+    int result = 0.0d;
+    result += first_vector->x_1 * second_vector->x_1;
+    result += first_vector->x_2 * second_vector->x_2;
+    result += first_vector->x_3 * second_vector->x_3;
+
+    return result;
+}
+
 double Vector3d__norm(Vector3d* vector)
 {
     if(vector == NULL) return 0.0f;

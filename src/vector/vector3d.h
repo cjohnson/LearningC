@@ -74,6 +74,15 @@ int Vector3d__add(Vector3d* addend, Vector3d* additive);
 Vector3d Vector3d__add_from(Vector3d* first_addend, Vector3d* second_addend);
 
 /**
+ * @brief               Finds the dot product of the two given vectors.
+ * 
+ * @param first_vector  The first vector in the operation
+ * @param second_vector The second vector in the operation
+ * @return Vector3d     The calculated dot product of the first and second vectors
+ */
+double Vector3d__dot(Vector3d* first_vector, Vector3d* second_vector);
+
+/**
  * @brief         Calculate the norm of the vector (double)
  * 
  * @param vector  The vector reference

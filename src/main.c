@@ -21,4 +21,6 @@ int main()
     Vector3d toAdd = Vector3d__create(2, 3, 2);
     Vector3d__add(&vec, &toAdd);
     Vector3d__print(&vec);
+
+    printf("Dot of vec and toAdd = %.3f\n", Vector3d__dot(&vec, &toAdd));
 }
