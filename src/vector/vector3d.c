@@ -49,9 +49,9 @@ Vector3d Vector3d__scale_from(Vector3d* input_vector, int scalar)
     if(input_vector == NULL)
         return vector;
     
-    vector->x_1 = scalar * input_vector->x_1;
-    vector->x_2 = scalar * input_vector->x_2;
-    vector->x_3 = scalar * input_vector->x_3;
+    vector.x_1 = scalar * input_vector->x_1;
+    vector.x_2 = scalar * input_vector->x_2;
+    vector.x_3 = scalar * input_vector->x_3;
 
     return vector;
 }
