@@ -48,12 +48,9 @@ Vector3i Vector3i__add(Vector3i* first_addend, Vector3i* second_addend)
     if(first_addend  == NULL) return Vector3i__create_empty();
     if(second_addend == NULL) return Vector3i__create_empty();
 
-    Vector3i sum = Vector3i__copy(first_addend);
-    sum.x_1 += second_addend->x_1;
-    sum.x_2 += second_addend->x_2;
-    sum.x_3 += second_addend->x_3;
-
-    return sum;
+    return Vector3i__create(first_addend->x_1 + second_addend->x_1,
+                            first_addend->x_2 + second_addend->x_2,
+                            first_addend->x_3 + second_addend->x_3);
 }
 
 Vector3i Vector3i__subtract(Vector3i* minuend, Vector3i* subtrahend)
@@ -61,12 +58,9 @@ Vector3i Vector3i__subtract(Vector3i* minuend, Vector3i* subtrahend)
     if(minuend    == NULL) return Vector3i__create_empty();
     if(subtrahend == NULL) return Vector3i__create_empty();
 
-    Vector3i difference = Vector3i__copy(minuend);
-    difference.x_1 -= subtrahend->x_1;
-    difference.x_2 -= subtrahend->x_2;
-    difference.x_3 -= subtrahend->x_3;
-
-    return difference;
+    return Vector3i__create(minuend->x_1 - subtrahend->x_1,
+                            minuend->x_2 - subtrahend->x_2,
+                            minuend->x_3 - subtrahend->x_3);
 }
 
 double Vector3i__norm(Vector3i* vector)

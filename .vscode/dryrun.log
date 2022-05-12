@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/cj/Workspace/LearningC'
+mkdir -p build/./src/vector/
+cc -I./src -I./src/vector -MMD -MP  -c src/vector/vector3i.c -o build/./src/vector/vector3i.c.o
+mkdir -p build/./src/
+cc -I./src -I./src/vector -MMD -MP  -c src/main.c -o build/./src/main.c.o
+cc ./build/./src/vector/vector3i.c.o ./build/./src/main.c.o -o build/learningc  -lm
+make: Leaving directory '/home/cj/Workspace/LearningC'
+ 
