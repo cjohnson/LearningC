@@ -30,3 +30,26 @@ Vector3d Vector3d__copy(Vector3d* vector_original)
         vector_original->x_2,
         vector_original->x_3);
 }
+
+#define VECTOR3D__TO_STRING_FORMAT "Vector3d[%.3f, %.3f, %.3f]"
+int Vector3d__to_string(char* serialize, Vector3d* vector)
+{
+    if(serialize == NULL) return EXIT_FAILURE;
+    if(vector    == NULL) return EXIT_FAILURE;
+    
+    sprintf(serialize, VECTOR3D__TO_STRING_FORMAT,
+        vector->x_1, vector->x_2, vector->x_3
+    );
+
+    return EXIT_SUCCESS;
+}
+
+int Vector3d__print(Vector3d* vector)
+{
+    char string[50];
+    if(Vector3d__to_string(string, vector))
+        return EXIT_FAILURE;
+
+    printf("%s\n", string);
+    return EXIT_SUCCESS;
+}

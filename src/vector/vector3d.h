@@ -36,3 +36,20 @@ Vector3d Vector3d__create_empty();
  * @return Vector3d       The newly created vector
  */
 Vector3d Vector3d__copy(Vector3d* vector_original);
+
+/**
+ * @brief           Serializes the vector into a readable string.
+ * 
+ * @param serialize The result string
+ * @param vector    The vector reference
+ * @return int      The exit status of the function
+ */
+int Vector3d__to_string(char* serialize, Vector3d* vector);
+
+/**
+ * @brief        Prints the serialized form of the vector
+ * 
+ * @param vector The vector reference
+ * @return int   The exit status of the function
+ */
+int Vector3d__print(Vector3d* vector);
