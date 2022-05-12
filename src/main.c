@@ -22,4 +22,7 @@ int main()
     Vector3d__print(ortho_vectors[0]);
     Vector3d__print(ortho_vectors[1]);
     Vector3d__print(ortho_vectors[2]);
+
+    free(ortho_vectors);
+    free(input_vectors);
 }
