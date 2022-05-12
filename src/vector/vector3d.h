@@ -38,6 +38,15 @@ Vector3d Vector3d__create_empty();
 Vector3d Vector3d__copy(Vector3d* vector_original);
 
 /**
+ * @brief                 Copies the values of a vector.
+ * 
+ * @param vector_original The vector to copy values into
+ * @param new_values      The vector whose values are to be copied
+ * @return Vector3d       The newly created vector
+ */
+int Vector3d__copy_from(Vector3d* vector_original, Vector3d* new_values);
+
+/**
  * @brief        Scales all the elements of a vector by a given scalar.
  * 
  * @param vector The vector reference

@@ -31,6 +31,16 @@ Vector3d Vector3d__copy(Vector3d* vector_original)
         vector_original->x_3);
 }
 
+int Vector3d__copy_from(Vector3d* vector_original, Vector3d* new_values)
+{
+    if(vector_original == NULL) return EXIT_FAILURE;
+    if(new_values      == NULL) return EXIT_FAILURE;
+
+    vector_original->x_1 = new_values->x_1;
+    vector_original->x_2 = new_values->x_2;
+    vector_original->x_3 = new_values->x_3;
+}
+
 int Vector3d__scale(Vector3d* vector, double scalar)
 {
     if(vector == NULL)
@@ -135,9 +145,7 @@ void Vector3d__orthogonalize(Vector3d* ortho_vector_set[], Vector3d* input_vecto
             Vector3d__scale(&temp, quotient);
             
             temp = Vector3d__subtract(ortho_vector_set[i], &temp);
-            ortho_vector_set[i]->x_1 = temp.x_1;
-            ortho_vector_set[i]->x_2 = temp.x_2;
-            ortho_vector_set[i]->x_3 = temp.x_3;
+            Vector3d__copy_from(ortho_vector_set[i], &temp);
         }
     }
 }
