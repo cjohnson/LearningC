@@ -74,6 +74,17 @@ Vector3d Vector3d__scale_from(Vector3d* input_vector, int scalar);
 int Vector3d__add(Vector3d* addend, Vector3d* additive);
 
 /**
+ * @brief                 Compute the result of a sum of scaled vectors (a linear combination)
+ * 
+ * @param addend_scalar   The scalar to be multiplied by the vector addend
+ * @param addend          The vector to be modified
+ * @param additive_scalar The scalar to be multiplied by the vector additive
+ * @param additive        The vector whose contents will be added to the addend
+ * @return int            The exit code
+ */
+int Vector3d__add_linear(double addend_scalar, Vector3d* addend, double additive_scalar, Vector3d* additive);
+
+/**
  * @brief               Adds all of the elements of the two vectors together, and returns the result.
  * 
  * @param first_addend  The first vector in the set of the addition operation

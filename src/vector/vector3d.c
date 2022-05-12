@@ -88,6 +88,18 @@ Vector3d Vector3d__add_from(Vector3d* first_addend, Vector3d* second_addend)
                             first_addend->x_3 + second_addend->x_3);
 }
 
+int Vector3d__add_linear(double addend_scalar, Vector3d* addend, double additive_scalar, Vector3d* additive)
+{
+    if(Vector3d__scale(addend, addend_scalar))
+        return EXIT_FAILURE;
+    Vector3d additive_final = Vector3d__scale_from(additive, additive_scalar);
+
+    if(Vector3d__add(addend, &additive_final))
+        return EXIT_FAILURE;
+
+    return EXIT_SUCCESS;
+}
+
 Vector3d Vector3d__subtract(Vector3d* minuend, Vector3d* subtrahend)
 {
     if(minuend    == NULL) return Vector3d__create_empty();
