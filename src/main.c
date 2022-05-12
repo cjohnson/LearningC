@@ -33,6 +33,15 @@ int main()
     printf("Sum = ");
     Vector3i__print(&sum);
 
+    // Subtraction testing
+    Vector3i difference = Vector3i__subtract(&sum, &vector);
+    printf("Minuend:    ");
+    Vector3i__print(&sum);
+    printf("Subtrahend: ");
+    Vector3i__print(&vector);
+    printf("Difference = ");
+    Vector3i__print(&difference);
+
     // Norm calculations
     printf("\nCalculating float norm...\n");
     printf("Norm = %f\n", Vector3i__normf(&vector));

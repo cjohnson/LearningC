@@ -56,6 +56,19 @@ Vector3i Vector3i__add(Vector3i* first_addend, Vector3i* second_addend)
     return sum;
 }
 
+Vector3i Vector3i__subtract(Vector3i* minuend, Vector3i* subtrahend)
+{
+    if(minuend    == NULL) return Vector3i__create_empty();
+    if(subtrahend == NULL) return Vector3i__create_empty();
+
+    Vector3i difference = Vector3i__copy(minuend);
+    difference.x -= subtrahend->x;
+    difference.y -= subtrahend->y;
+    difference.z -= subtrahend->z;
+
+    return difference;
+}
+
 double Vector3i__norm(Vector3i* vector)
 {
     if(vector == NULL) return 0.0f;

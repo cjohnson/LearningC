@@ -55,6 +55,15 @@ int Vector3i__scale(Vector3i* vector, int scalar);
 Vector3i Vector3i__add(Vector3i* first_addend, Vector3i* second_addend);
 
 /**
+ * @brief               Subtracts the first vector (the minuend) from the second (the subtrahend).
+ * 
+ * @param first_addend  The minuend of the operation
+ * @param second_addend The subtrahend of the operation
+ * @return Vector3i     The difference vector
+ */
+Vector3i Vector3i__subtract(Vector3i* minuend, Vector3i* subtrahend);
+
+/**
  * @brief        Calculate the norm of the vector (double)
  * 
  * @param vector The vector reference
