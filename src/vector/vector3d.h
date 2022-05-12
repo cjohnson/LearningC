@@ -47,13 +47,22 @@ Vector3d Vector3d__copy(Vector3d* vector_original);
 int Vector3d__scale(Vector3d* vector, int scalar);
 
 /**
- * @brief                 Scales all the elements of a vector by a given scalar, then returns a new vector
+ * @brief                 Scales all the elements of a vector by a given scalar, then returns the result.
  * 
  * @param input_vector    The vector reference
  * @param scalar          The scalar
  * @return Vector3d       The scaled vector
  */
 Vector3d Vector3d__scale_from(Vector3d* input_vector, int scalar);
+
+/**
+ * @brief               Adds two vectors together, and returns the result.
+ * 
+ * @param first_addend  The first vector in the set of the addition operation
+ * @param second_addend The second vector in the set of the addition operation
+ * @return Vector3d     The sum vector
+ */
+Vector3d Vector3d__add_from(Vector3d* first_addend, Vector3d* second_addend);
 
 /**
  * @brief         Calculate the norm of the vector (double)

@@ -56,6 +56,16 @@ Vector3d Vector3d__scale_from(Vector3d* input_vector, int scalar)
     return vector;
 }
 
+Vector3d Vector3d__add_from(Vector3d* first_addend, Vector3d* second_addend)
+{
+    if(first_addend  == NULL) return Vector3d__create_empty();
+    if(second_addend == NULL) return Vector3d__create_empty();
+
+    return Vector3d__create(first_addend->x_1 + second_addend->x_1,
+                            first_addend->x_2 + second_addend->x_2,
+                            first_addend->x_3 + second_addend->x_3);
+}
+
 double Vector3d__norm(Vector3d* vector)
 {
     if(vector == NULL) return 0.0f;
