@@ -31,6 +31,18 @@ Vector3d Vector3d__copy(Vector3d* vector_original)
         vector_original->x_3);
 }
 
+double Vector3d__norm(Vector3d* vector)
+{
+    if(vector == NULL) return 0.0f;
+
+    // Calculate the radicand of the norm.
+    double radicand = vector->x_1 * vector->x_1 + 
+                      vector->x_2 * vector->x_2 + 
+                      vector->x_3 * vector->x_3;
+
+    return sqrt(radicand);
+}
+
 #define VECTOR3D__TO_STRING_FORMAT "Vector3d[%.3f, %.3f, %.3f]"
 int Vector3d__to_string(char* serialize, Vector3d* vector)
 {

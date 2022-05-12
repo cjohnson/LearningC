@@ -30,6 +30,14 @@ Vector3d Vector3d__create(double x_1, double x_2, double x_3);
 Vector3d Vector3d__create_empty();
 
 /**
+ * @brief         Calculate the norm of the vector (double)
+ * 
+ * @param vector  The vector reference
+ * @return double The norm of the vector
+ */
+double Vector3d__norm(Vector3d* vector);
+
+/**
  * @brief                 Copies the values of an existing vector into a new vector.
  * 
  * @param vector_original The vector to be copied
