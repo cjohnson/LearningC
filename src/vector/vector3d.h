@@ -30,6 +30,15 @@ Vector3d Vector3d__create(double x_1, double x_2, double x_3);
 Vector3d Vector3d__create_empty();
 
 /**
+ * @brief        Scales all the elements of a vector by a given scalar.
+ * 
+ * @param vector The vector reference
+ * @param scalar The scalar
+ * @return int   The exit status of the function
+ */
+int Vector3d__scale(Vector3d* vector, int scalar);
+
+/**
  * @brief         Calculate the norm of the vector (double)
  * 
  * @param vector  The vector reference

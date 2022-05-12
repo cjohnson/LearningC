@@ -11,4 +11,7 @@ int main()
     Vector3d__print(&copy_of_vector3d);
 
     printf("Norm of vector3d = %.3f", Vector3d__norm(&vector3d));
+
+    Vector3d__scale(&copy_of_vector3d, 3);
+    Vector3d__print(&copy_of_vector3d);
 }

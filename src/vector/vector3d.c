@@ -31,6 +31,18 @@ Vector3d Vector3d__copy(Vector3d* vector_original)
         vector_original->x_3);
 }
 
+int Vector3d__scale(Vector3d* vector, int scalar)
+{
+    if(vector == NULL)
+        return EXIT_FAILURE;
+    
+    vector->x_1 *= scalar;
+    vector->x_2 *= scalar;
+    vector->x_3 *= scalar;
+
+    return EXIT_SUCCESS;
+}
+
 double Vector3d__norm(Vector3d* vector)
 {
     if(vector == NULL) return 0.0f;
