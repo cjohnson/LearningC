@@ -93,7 +93,7 @@ float Vector3i__normf(Vector3i* vector)
     return sqrtf(radicand);
 }
 
-#define VECTOR3I__TO_STRING_FORMAT "Vector at [%d, %d, %d]"
+#define VECTOR3I__TO_STRING_FORMAT "Vector3i[%d, %d, %d]"
 int Vector3i__to_string(char* serialize, Vector3i* vector)
 {
     if(serialize == NULL) return EXIT_FAILURE;
