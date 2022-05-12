@@ -22,7 +22,7 @@ int main()
     }
 
     // printf("1");
-    Vector3d__orthogonalize(ortho_vectors, input_vectors, 3);
+    Vector3d__orthonormalize(ortho_vectors, input_vectors, 3);
 
     Vector3d__print(ortho_vectors[0]);
     Vector3d__print(ortho_vectors[1]);

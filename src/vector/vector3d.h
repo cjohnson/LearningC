@@ -101,6 +101,15 @@ double Vector3d__dot(Vector3d* first_vector, Vector3d* second_vector);
 void Vector3d__orthogonalize(Vector3d* ortho_vector_set[], Vector3d* input_vector_set[], int set_size);
 
 /**
+ * @brief                  Finds an orthonormal set of Vector3d using the Gram-Schmidt Orthogonalization procedure
+ * 
+ * @param ortho_vector_set The resulting set of orthonormal vectors
+ * @param input_vector_set The original set of vectors
+ * @param set_size         The size of the sets
+ */
+void Vector3d__orthonormalize(Vector3d* ortho_vector_set[], Vector3d* input_vector_set[], int set_size);
+
+/**
  * @brief         Calculate the norm of the vector (double)
  * 
  * @param vector  The vector reference

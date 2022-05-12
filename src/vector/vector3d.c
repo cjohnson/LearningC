@@ -142,6 +142,18 @@ void Vector3d__orthogonalize(Vector3d* ortho_vector_set[], Vector3d* input_vecto
     }
 }
 
+void Vector3d__orthonormalize(Vector3d* ortho_vector_set[], Vector3d* input_vector_set[], int set_size)
+{
+    Vector3d__orthogonalize(ortho_vector_set, input_vector_set, set_size);
+
+    double norm;
+    for(int i = 0; i < set_size; ++i)
+    {
+        norm = Vector3d__norm(ortho_vector_set[i]);
+        Vector3d__scale(ortho_vector_set[i], 1 / norm);
+    }
+}
+
 double Vector3d__norm(Vector3d* vector)
 {
     if(vector == NULL) return 0.0f;
