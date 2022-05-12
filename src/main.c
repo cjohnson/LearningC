@@ -7,9 +7,9 @@ int main()
     Vector3i__print(&vector);
 
     // Struct access testing
-    printf("Adding 2 to the x position, 3 to the z position...\n");
-    vector.x += 2;
-    vector.z += 3;
+    printf("Adding 2 to the x_1 position, 3 to the x_3 position...\n");
+    vector.x_1 += 2;
+    vector.x_3 += 3;
     Vector3i__print(&vector);
 
     // Copy function testing

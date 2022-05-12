@@ -8,18 +8,18 @@
  * @brief Represents a 3-dimensional vector in space.
  */
 struct Vector3i
-{ int x, y, z; }; 
+{ int x_1, x_2, x_3; }; 
 typedef struct Vector3i Vector3i;
 
 /**
  * @brief           Creates a new 3-dimensional vector.
  * 
- * @param x         X value of the vector.
- * @param y         Y value of the vector.
- * @param z         Z value of the vector.
+ * @param x_1       1st value of the vector.
+ * @param x_2       2nd value of the vector.
+ * @param x_3       3rd value of the vector.
  * @return Vector3i The resulting vector.
  */
-Vector3i Vector3i__create(int x, int y, int z);
+Vector3i Vector3i__create(int x_1, int x_2, int x_3);
 
 /**
  * @brief           Creates a 3-dimensional vector at the origin.
