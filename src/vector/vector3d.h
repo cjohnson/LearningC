@@ -30,6 +30,14 @@ Vector3d Vector3d__create(double x_1, double x_2, double x_3);
 Vector3d Vector3d__create_empty();
 
 /**
+ * @brief                 Copies the values of an existing vector into a new vector.
+ * 
+ * @param vector_original The vector to be copied
+ * @return Vector3d       The newly created vector
+ */
+Vector3d Vector3d__copy(Vector3d* vector_original);
+
+/**
  * @brief        Scales all the elements of a vector by a given scalar.
  * 
  * @param vector The vector reference
@@ -45,14 +53,6 @@ int Vector3d__scale(Vector3d* vector, int scalar);
  * @return double The norm of the vector
  */
 double Vector3d__norm(Vector3d* vector);
-
-/**
- * @brief                 Copies the values of an existing vector into a new vector.
- * 
- * @param vector_original The vector to be copied
- * @return Vector3d       The newly created vector
- */
-Vector3d Vector3d__copy(Vector3d* vector_original);
 
 /**
  * @brief           Serializes the vector into a readable string.
