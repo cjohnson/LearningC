@@ -68,6 +68,52 @@ Vector3i Vector3i__lincom_ext(Vector3i* first_vector, int scalar, Vector3i* seco
     return Vector3i__lincom(1, first_vector, scalar, second_vector);
 }
 
+int Vector3i__dot(Vector3i* first_vector, Vector3i* second_vector)
+{
+    int result = 0;
+    result += first_vector->x_1 * second_vector->x_1;
+    result += first_vector->x_2 * second_vector->x_2;
+    result += first_vector->x_3 * second_vector->x_3;
+
+    return result;
+}
+
+void Vector3i__orthogonalize(Vector3i* ortho_vector_set[], Vector3i* input_vector_set[], int set_size)
+{
+    // Checks if the set is already orthogonalized.
+    bool orthogonalized = true;
+    for(int i = 1; i < set_size; ++i)
+    {
+        if(Vector3i__dot(input_vector_set[i], input_vector_set[i-1]))
+            orthogonalized = false;
+    }
+    if(orthogonalized)
+        for(int i = 0; i < set_size; ++i)
+            ortho_vector_set[i] = input_vector_set[i];
+
+    // Perform the Gram-Schmidt procedure
+    ortho_vector_set[0] = input_vector_set[0];
+    for(int i = 1; i < set_size; ++i)
+    {
+        ortho_vector_set[i] = input_vector_set[i];
+        for(int j = 0; j < i; ++j)
+        {
+            printf("Step %d\n", j+1);
+            int numerator_dot_product = Vector3i__dot(ortho_vector_set[j], input_vector_set[i]);
+            int denominator_dot_product = Vector3i__dot(ortho_vector_set[j], ortho_vector_set[j]);
+            int quotient = numerator_dot_product / denominator_dot_product;
+            printf("%d / %d = %d\n", numerator_dot_product, denominator_dot_product, quotient);
+            
+            if(quotient == 0) continue;
+
+            Vector3i temp = Vector3i__copy(ortho_vector_set[j]);
+            Vector3i__scale(&temp, quotient);
+            temp = Vector3i__subtract(input_vector_set[i], &temp);
+            ortho_vector_set[i] = &temp;
+        }
+    }
+}
+
 Vector3i Vector3i__subtract(Vector3i* minuend, Vector3i* subtrahend)
 {
     if(minuend    == NULL) return Vector3i__create_empty();

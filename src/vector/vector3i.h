@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -74,6 +75,24 @@ Vector3i Vector3i__lincom(int first_scalar, Vector3i* first_vector, int second_s
  * @return Vector3i     The result of the linear combination
  */
 Vector3i Vector3i__lincom_ext(Vector3i* first_vector, int scalar, Vector3i* second_vector);
+
+/**
+ * @brief               Finds the dot product of the two given vectors.
+ * 
+ * @param first_vector  The first vector in the operation
+ * @param second_vector The second vector in the operation
+ * @return Vector3i     The calculated dot product of the first and second vectors
+ */
+int Vector3i__dot(Vector3i* first_vector, Vector3i* second_vector);
+
+/**
+ * @brief                  Finds an orthogonal set of Vector3i.
+ * 
+ * @param ortho_vector_set The resulting set of orthogonal vectors
+ * @param input_vector_set The original set of vectors
+ * @param set_size         The size of the sets
+ */
+void Vector3i__orthogonalize(Vector3i* ortho_vector_set[], Vector3i* input_vector_set[], int set_size);
 
 /**
  * @brief               Subtracts the first vector (the minuend) from the second (the subtrahend).

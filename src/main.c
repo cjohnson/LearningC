@@ -2,58 +2,23 @@
 
 int main()
 {
-    // Initial creation and printing
-    Vector3i vector = Vector3i__create_empty();
-    Vector3i__print(&vector);
+    Vector3i first_vector =  Vector3i__create(1, 0, 0);
+    Vector3i second_vector = Vector3i__create(3, 2, 5);
+    Vector3i third_vector =  Vector3i__create(0, 2, 4);
+    Vector3i vectors[] = {first_vector, second_vector, third_vector};
 
-    // Struct access testing
-    printf("Adding 2 to the x_1 position, 3 to the x_3 position...\n");
-    vector.x_1 += 2;
-    vector.x_3 += 3;
-    Vector3i__print(&vector);
+    Vector3i** input_vectors = malloc(sizeof(first_vector) * 3);
+    input_vectors[0] = &vectors[0];
+    input_vectors[1] = &vectors[1];
+    input_vectors[2] = &vectors[2];
 
-    // Copy function testing
-    printf("Copied Vector:\n");
-    Vector3i copiedVector = Vector3i__copy(&vector);
-    Vector3i__print(&copiedVector);
+    printf("Dot product of the vectors: %d\n", Vector3i__dot(&first_vector, &second_vector));
 
-    // Scale testing
-    Vector3i__scale(&copiedVector, 2);
-    printf("Scaling copied vector. Original Vector:\n");
-    Vector3i__print(&vector);
-    printf("Copied vector:\n");
-    Vector3i__print(&copiedVector);
-
-    // Addition testing
-    Vector3i sum = Vector3i__add(&vector, &copiedVector);
-    printf("First Vector:  ");
-    Vector3i__print(&vector);
-    printf("Second Vector: ");
-    Vector3i__print(&copiedVector);
-    printf("Sum = ");
-    Vector3i__print(&sum);
-
-    // Linear combinations
-    Vector3i lincom = Vector3i__lincom(2, &vector, 3, &copiedVector);
-    printf("First Vector (x2):  ");
-    Vector3i__print(&vector);
-    printf("Second Vector (x3): ");
-    Vector3i__print(&copiedVector);
-    printf("Linear Combination = ");
-    Vector3i__print(&lincom);
-
-    // Subtraction testing
-    Vector3i difference = Vector3i__subtract(&sum, &vector);
-    printf("Minuend:    ");
-    Vector3i__print(&sum);
-    printf("Subtrahend: ");
-    Vector3i__print(&vector);
-    printf("Difference = ");
-    Vector3i__print(&difference);
-
-    // Norm calculations
-    printf("\nCalculating float norm...\n");
-    printf("Norm = %f\n", Vector3i__normf(&vector));
-    printf("\nCalculating double norm...\n");
-    printf("Norm = %f\n", Vector3i__norm(&vector));
+    Vector3i** ortho_vectors = malloc(sizeof(first_vector) * 3);
+    Vector3i__orthogonalize(ortho_vectors, input_vectors, 3);
+    for(int i = 0; i < 3; i++)
+    {
+        // printf("%d\n", i);
+        Vector3i__print(ortho_vectors[i]);
+    }
 }
