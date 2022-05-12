@@ -17,4 +17,8 @@ int main()
 
     Vector3d vec = Vector3d__add_from(&vector3d, &copy_of_vector3d);
     Vector3d__print(&vec);
+
+    Vector3d toAdd = Vector3d__create(2, 3, 2);
+    Vector3d__add(&vec, &toAdd);
+    Vector3d__print(&vec);
 }

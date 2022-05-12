@@ -56,7 +56,16 @@ int Vector3d__scale(Vector3d* vector, int scalar);
 Vector3d Vector3d__scale_from(Vector3d* input_vector, int scalar);
 
 /**
- * @brief               Adds two vectors together, and returns the result.
+ * @brief          Adds all of the elements of the additive to the addend, modifying the addend.
+ * 
+ * @param addend   The vector to be added to
+ * @param additive The vector contents to add to the addend
+ * @return int     The exit status
+ */
+int Vector3d__add(Vector3d* addend, Vector3d* additive);
+
+/**
+ * @brief               Adds all of the elements of the two vectors together, and returns the result.
  * 
  * @param first_addend  The first vector in the set of the addition operation
  * @param second_addend The second vector in the set of the addition operation

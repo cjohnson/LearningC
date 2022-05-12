@@ -56,6 +56,18 @@ Vector3d Vector3d__scale_from(Vector3d* input_vector, int scalar)
     return vector;
 }
 
+int Vector3d__add(Vector3d* addend, Vector3d* additive)
+{
+    if(addend   == NULL) return EXIT_FAILURE;
+    if(additive == NULL) return EXIT_FAILURE;
+
+    addend->x_1 += additive->x_1;
+    addend->x_2 += additive->x_2;
+    addend->x_3 += additive->x_3;
+
+    return EXIT_SUCCESS;
+}
+
 Vector3d Vector3d__add_from(Vector3d* first_addend, Vector3d* second_addend)
 {
     if(first_addend  == NULL) return Vector3d__create_empty();
