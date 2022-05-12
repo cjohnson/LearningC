@@ -84,12 +84,17 @@ void Vector3i__orthogonalize(Vector3i* ortho_vector_set[], Vector3i* input_vecto
     bool orthogonalized = true;
     for(int i = 1; i < set_size; ++i)
     {
-        if(Vector3i__dot(input_vector_set[i], input_vector_set[i-1]))
+        if(Vector3i__dot(input_vector_set[i], input_vector_set[i-1]) != 0)
             orthogonalized = false;
     }
+
+    // Return the same set if the vectors are orthogonal
     if(orthogonalized)
+    {
         for(int i = 0; i < set_size; ++i)
             ortho_vector_set[i] = input_vector_set[i];
+        return;
+    }
 
     // Perform the Gram-Schmidt procedure
     ortho_vector_set[0] = input_vector_set[0];
@@ -98,16 +103,17 @@ void Vector3i__orthogonalize(Vector3i* ortho_vector_set[], Vector3i* input_vecto
         ortho_vector_set[i] = input_vector_set[i];
         for(int j = 0; j < i; ++j)
         {
-            printf("Step %d\n", j+1);
+            // Calculate the vector projections
             int numerator_dot_product = Vector3i__dot(ortho_vector_set[j], input_vector_set[i]);
             int denominator_dot_product = Vector3i__dot(ortho_vector_set[j], ortho_vector_set[j]);
+
             int quotient = numerator_dot_product / denominator_dot_product;
-            printf("%d / %d = %d\n", numerator_dot_product, denominator_dot_product, quotient);
-            
             if(quotient == 0) continue;
 
+            // Remove the projections
             Vector3i temp = Vector3i__copy(ortho_vector_set[j]);
             Vector3i__scale(&temp, quotient);
+            
             temp = Vector3i__subtract(input_vector_set[i], &temp);
             ortho_vector_set[i] = &temp;
         }
