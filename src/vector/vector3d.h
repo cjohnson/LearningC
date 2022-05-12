@@ -142,3 +142,12 @@ int Vector3d__to_string(char* serialize, Vector3d* vector);
  * @return int   The exit status of the function
  */
 int Vector3d__print(Vector3d* vector);
+
+/**
+ * @brief          Prints the serialized form of the vector for each vector in the set
+ * 
+ * @param set      The vector set
+ * @param set_size The size of the vector set
+ * @return int     The exit status of the function
+ */
+int Vector3d__print_set(Vector3d** set, int set_size);

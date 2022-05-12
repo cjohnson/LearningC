@@ -201,3 +201,14 @@ int Vector3d__print(Vector3d* vector)
     printf("%s\n", string);
     return EXIT_SUCCESS;
 }
+
+int Vector3d__print_set(Vector3d** set, int set_size)
+{
+    for(int i = 0; i < set_size; ++i)
+    {
+        if(Vector3d__print(set[i]))
+            return EXIT_FAILURE;
+    }
+    
+    return EXIT_SUCCESS;
+}

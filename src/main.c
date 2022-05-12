@@ -19,9 +19,7 @@ int main()
 
     Vector3d__orthonormalize(ortho_vectors, input_vectors, 3);
 
-    Vector3d__print(ortho_vectors[0]);
-    Vector3d__print(ortho_vectors[1]);
-    Vector3d__print(ortho_vectors[2]);
+    Vector3d__print_set(ortho_vectors, 3);
 
     free(ortho_vectors);
     free(input_vectors);
